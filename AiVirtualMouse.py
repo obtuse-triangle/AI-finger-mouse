@@ -27,7 +27,7 @@ clocX, clocY = 0, 0
 clicktoggle = False
 RMclick = 0
 
-detector = htm.handDetector(maxHands=1)
+detector = htm.handDetector(maxHands=2)
 wSrc, hSrc = autopy.screen.size()
 # print(wSrc, hSrc)
 
@@ -96,7 +96,7 @@ while True:
                 cup = [plocX, plocY]
             else:
                 plocX, plocY = clocX, clocY
-                scrolltoggle = False
+                scrollToggle = False
                 cup = [plocX, plocY]
             plocX, plocY = clocX, clocY
             if fingers[4] == 0 and fingers[3] == 0:
@@ -112,6 +112,6 @@ while True:
     cv2.putText(img, str(int(fps)), (20, 50), cv2.FONT_HERSHEY_PLAIN, 3, (255, 0, 0), 3)
 
     # 12. Display
-
     cv2.imshow("Image", img)
+    cv2.setWindowProperty("Image", cv2.WND_PROP_TOPMOST, 1)
     cv2.waitKey(1)
