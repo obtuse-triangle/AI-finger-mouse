@@ -90,7 +90,7 @@ while True:
                     img, (lineInfo1[4], lineInfo1[5]), 10, (255, 255, 0), cv2.FILLED
                 )
 
-                scroll = int((clocY - cup[1] ) * 1.3)
+                scroll = int((clocY - cup[1]) * 1.3)
 
                 win32api.mouse_event(MOUSEEVENTF_WHEEL, 0, 0, scroll, 0)
                 cup = [plocX, plocY]

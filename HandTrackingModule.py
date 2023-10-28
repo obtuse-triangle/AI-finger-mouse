@@ -14,7 +14,7 @@ class handDetector:
 
         self.mpHands = mp.solutions.hands
         self.hands = self.mpHands.Hands(
-            self.mode, self.maxHands, self.detectionCon, self.trackCon
+            self.mode, self.maxHands, 1, self.detectionCon, self.trackCon
         )
         self.mpDraw = mp.solutions.drawing_utils
         self.tipIds = [4, 8, 12, 16, 20]
@@ -112,7 +112,13 @@ def main():
         pTime = cTime
 
         cv2.putText(
-            img, str(int(fps))+"fps", (10, 70), cv2.FONT_HERSHEY_PLAIN, 3, (255, 0, 255), 3
+            img,
+            str(int(fps)) + "fps",
+            (10, 70),
+            cv2.FONT_HERSHEY_PLAIN,
+            3,
+            (255, 0, 255),
+            3,
         )
 
         cv2.imshow("Image", img)
